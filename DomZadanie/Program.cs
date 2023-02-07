@@ -40,3 +40,62 @@ Console.WriteLine($" точка пересечения двух прямых : (
 // Task Рекурсия
 // Дана строка, состоящая из N попарно различных символов. Требуется вывести все перестановки символов данной строки.
 
+/*
+int Factorial (int n)  
+{
+    if(n == 1) return 1;
+    else return n * Factorial(n - 1);      
+}
+void Sort(string[] arr , int col)
+{
+    for (int j = 1; j < col; j++)
+    {
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            string t = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = t;
+            Console.WriteLine($"[{string.Join(", ", arr)}]");
+        }
+    }
+    
+}
+
+Console.WriteLine("Введите количество символов : ");
+    int n = Convert.ToInt32(Console.ReadLine());
+int col = Factorial(n);
+string[] array = new string[n];
+for (int i = 0; i < array.Length; i++)
+{
+    Console.WriteLine("Введите символ : ");
+    array[i] = Console.ReadLine();
+}
+// Console.WriteLine($"[{string.Join(", ", array)}]");
+
+Sort(array , col);
+
+*/
+
+// Task Площадь треугольника
+// По целочисленным координатам вершин треугольника (x1,y1), (x2,y2) и (x3,y3) требуется вычислить его площадь.
+// 2 1 2 4 6 1 -> 6
+
+Console.Write("Введите X1: ");
+    double x1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите Y1: ");
+    double y1 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите X2: ");
+    double x2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите Y2: ");
+    double y2 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите X3: ");
+    double x3 = Convert.ToDouble(Console.ReadLine());
+Console.Write("Введите Y3: ");
+    double y3 = Convert.ToDouble(Console.ReadLine());
+double Stor1 = Math.Round(Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2)), 2);
+double Stor2 = Math.Round(Math.Sqrt(Math.Pow(x3 - x2, 2) + Math.Pow(y3 - y2, 2)), 2);
+double Stor3 = Math.Round(Math.Sqrt(Math.Pow(x3 - x1, 2) + Math.Pow(y3 - y1, 2)), 2);
+double HalfPerim = (Stor1 + Stor2 + Stor3) / 2;
+double S = Math.Round(Math.Sqrt(HalfPerim * (HalfPerim - Stor1) * (HalfPerim - Stor2) * (HalfPerim - Stor3)), 2);
+
+Console.WriteLine(S);
